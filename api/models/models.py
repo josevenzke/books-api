@@ -1,5 +1,5 @@
 from venSQL import Controller, BaseModel, validate_fields
-from db_setup import DB_SETTINGS
+from api.utils.constants import DB_SETTINGS
 
 Controller.connect(database_settings=DB_SETTINGS)
 

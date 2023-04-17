@@ -1,8 +1,6 @@
-from venzpy import Venzpy, response
-from models import Book
-from utils import deserializer
-
-app = Venzpy()
+from api.models.models import Book
+from api.config.app import app, response
+from api.utils.utils import deserializer
 
 @app.route("/books", methods=['GET','POST'])
 def home(request):
