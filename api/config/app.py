@@ -1,4 +1,4 @@
-from venzpy import Venzpy, response
+from venzpy import Venzpy, Response
 from venSQL import Controller
 from api.utils.constants import DB_SETTINGS
 

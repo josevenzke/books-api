@@ -1,4 +1,4 @@
-from api.config.app import app, response
+from api.config.app import app
 from api.authors import services
 
 @app.route("/author")
