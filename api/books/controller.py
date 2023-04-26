@@ -1,33 +1,23 @@
 import json
-from api.config.app import app, response
+from api.config.app import app, Response
 from api.books import services
 
 @app.route("/book")
-class BooksResource:
-    def get(self, req):
+class Books:
+    def get(self, request):
         books = services.get_books()
-        response.json = {"books":books}
-        return response
+        return Response(json={"books":books},status=200)
     
     def post(self, request):
-        data = request.json
-        response.json = data
-        return response
+        new_book = services.create_book(request.json)
+        return Response(json={"book":new_book}, status=201)
+
+@app.route("/book/{id}")
+class Book:
+    def get(self, request, id):
+        book = services.get_book(id)
+        return Response(json=book,status=200)
     
-
-@app.route("/about",  methods=['GET','POST'])
-def about(request):
-    books_data = [
-    {"name": "Pythoning", "lenght": 400, "genre": "tech"},
-    {"name": "Harry Potter", "lenght": 400, "genre": "fantasy"}
-    ]
-    for book in books_data:
-        x = Book.objects.create(object=book)
-
-    response.text = "Hello from the ABOUT page"
-    return response
-
-@app.route("/about/{name}",  methods=['GET','POST'])
-def about(request, name):
-    response.text = f"Hello {name}"
-    return response
+    def post(self, request):
+        new_book = services.create_book(request.json)
+        return Response(json={"book":new_book}, status=201)
