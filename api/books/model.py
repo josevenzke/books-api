@@ -1,9 +1,7 @@
-from venSQL import Controller, BaseModel, validate_fields
-from api.utils.constants import DB_SETTINGS
+from venSQL import BaseModel
 
-@validate_fields
 class Book(BaseModel):
-    table_name = "books"
+    table_name: str = "books"
     name: str
     lenght: int
     genre: str
