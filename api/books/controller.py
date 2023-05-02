@@ -18,6 +18,3 @@ class Book:
         book = services.get_book(id)
         return Response(json=book,status=200)
     
-    def post(self, request):
-        new_book = services.create_book(request.json)
-        return Response(json={"book":new_book}, status=201)
