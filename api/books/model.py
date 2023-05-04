@@ -1,7 +1,6 @@
 from venSQL import BaseModel
 from pydantic.dataclasses import dataclass
 
-@dataclass
 class Book(BaseModel):
     name: str
     lenght: int
