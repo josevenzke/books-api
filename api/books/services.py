@@ -10,5 +10,6 @@ def get_book(id):
     return utils.deserializer(books)
 
 def create_book(data: dict):
-    author = Book.objects.create(data)
-    return utils.deserializer(author)
+    book = Book(**data)
+    book.save()
+    return utils.deserializer(book)
