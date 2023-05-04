@@ -1,7 +1,7 @@
 from api.config.app import app
 from api.authors import services
 
-@app.route("/author")
+@app.route("/authors")
 class AuthorsResource:
     def get(self, req):
         authors = services.get_authors()

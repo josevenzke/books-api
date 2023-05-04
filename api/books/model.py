@@ -2,6 +2,7 @@ from venSQL import BaseModel
 from pydantic.dataclasses import dataclass
 
 class Book(BaseModel):
+    id: int
     name: str
     lenght: int
     genre: str
