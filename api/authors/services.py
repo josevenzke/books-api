@@ -9,3 +9,15 @@ def get_authors():
 def create_author(data: Author):
     author = Author.objects.create(data)
     return utils.deserializer(author)
+
+def get_author(id):
+    author = Author.objects.get(id)
+    return utils.deserializer(author)
+
+def update_author(id, data):
+    author = Author.objects.update(id,data)
+    return utils.deserializer(author)
+
+def delete_author(id, data):
+    Author.objects.delete(id)
+    return {"deleted": True}
