@@ -1,4 +1,3 @@
-import json
 from api.config.app import app, Response
 from api.books import services
 
