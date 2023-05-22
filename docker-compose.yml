@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    restart: on-failure
+    command: python -u local_server.py
+    volumes:
+      - ./api:/usr/src/app/
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_USER=booksapi
+      - POSTGRES_PASSWORD=booksapi
+      - POSTGRES_DB=books_api_dev
+
+volumes:
+  postgres_data:

@@ -1,5 +1,5 @@
-from api.books.model import Book
-from api.utils import utils
+from books.model import Book
+from utils import utils
 
 def get_books():
     books = Book.objects.get_all()

@@ -1,5 +1,5 @@
-from api.config.app import app, Response
-from api.books import services
+from config.app import app, Response
+from books import services
 
 @app.route("/books")
 class Books:

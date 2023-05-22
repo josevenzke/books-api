@@ -1,5 +1,5 @@
-from api.authors.model import Author
-from api.utils import utils
+from authors.model import Author
+from utils import utils
 
 def get_authors():
     authors = Author.objects.get_all()

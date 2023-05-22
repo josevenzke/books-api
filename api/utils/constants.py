@@ -1,7 +1,8 @@
 DB_SETTINGS = {
-    'host': '127.0.0.1',
+    'host': 'db',
     'port': '5432',
-    'database': 'ormtest',
-    'user': 'jose',
-    'password': '1415926'
+    'database': 'books_api_dev',
+    'user': 'booksapi',
+    'password': 'booksapi'
 }
+
