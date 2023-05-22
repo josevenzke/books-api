@@ -18,6 +18,6 @@ def update_author(id, data):
     author = Author.objects.update(id,data)
     return utils.deserializer(author)
 
-def delete_author(id, data):
+def delete_author(id):
     Author.objects.delete(id)
     return {"deleted": True}
