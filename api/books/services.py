@@ -1,6 +1,7 @@
 from books.model import Book
 from utils import utils
 
+
 def get_books():
     books = Book.objects.get_all()
     return utils.deserializer(books, many=True)

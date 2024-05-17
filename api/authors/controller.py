@@ -1,9 +1,9 @@
-from config.app import app
 from authors import services
+from config.app import app
 
 
 @app.route(path="/authors", methods=['GET', 'POST'])
-def books(request):
+def authors(request):
     if request.method == 'GET':
         authors = services.get_authors()
         return {'authors':authors}, 200
@@ -12,7 +12,7 @@ def books(request):
         return {"author":new_author}, 201
 
 @app.route(path="/authors/{id}", methods=['GET', 'PUT','DELETE'])
-def book(request, id):
+def author(request, id):
     if request.method == 'GET':
         author = services.get_author(id)
         return {'author':author}, 200
