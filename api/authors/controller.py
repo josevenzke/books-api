@@ -11,7 +11,7 @@ def authors(request):
         new_author = services.create_author(request.json)
         return {"author":new_author}, 201
 
-@app.route(path="/authors/{id}", methods=['GET', 'PUT','DELETE'])
+@app.route(path="/authors/[id]", methods=['GET', 'PUT','DELETE'])
 def author(request, id):
     if request.method == 'GET':
         author = services.get_author(id)

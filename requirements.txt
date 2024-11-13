@@ -1,5 +1,5 @@
 parse==1.19.0
 psycopg2-binary==2.9.9
 venSQL==0.0.9
-venzpy==0.1.4
+venzpy==0.2.0
 WebOb==1.8.7

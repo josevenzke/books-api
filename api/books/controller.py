@@ -11,7 +11,7 @@ class Books:
         new_book = services.create_book(request.json)
         return Response(json={"book":new_book}, status=201)
 
-@app.route("/books/{id}")
+@app.route("/books/[id]")
 class Book:
     def get(self, request, id):
         book = services.get_book(id)
